@@ -1,0 +1,45 @@
+# Felipe Giuste
+
+## Ports ##
+# SMART-on-FHIR Application (smart-on-fhir-app): 8111
+# HAPI R4 FHRI Server (hapi-r4): 8004
+
+version: "3.8"
+
+# Persistent FHIR database
+volumes:
+    r4-database:
+
+# Services
+services:
+    smartapp: ##------- SMART-on-FHIR Application -------##
+        container_name: smartapp
+        image: "fgiuste/node:15"
+        working_dir: /home/node/app
+        environment:
+            - NODE_ENV=production
+            - NPM_CONFIG_LOGLEVEL=info
+        volumes:
+            - ./:/home/node/app
+        ports:
+            - "8111:3000"
+        command: "/home/node/app/run_app.sh"
+        stdin_open: true # docker run -i
+        tty: true # docker run -t
+
+    hapir4: ##------- HAPI R4 FHIR Server -------##
+        container_name: hapir4
+        image: smartonfhir/hapi-5:r4-synthea
+        environment:
+            PORT: 8080
+            HOST: 0.0.0.0
+        ports:
+            - 8004:8080
+        volumes:
+            - "r4-database:/usr/local/tomcat/target/database:delegated"
+        command: ["sh", "-c", "
+            envsubst < /tmp/hapi.properties.tpl > /config/hapi.properties &&
+            envsubst < /tmp/server.xml > /usr/local/tomcat/conf/server.xml &&
+            catalina.sh run"]
+
+        
