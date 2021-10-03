@@ -35,7 +35,7 @@ services:
             PORT: 8080
             HOST: 0.0.0.0
         ports:
-            - 8005:8080
+            - "8301:8080"
         volumes:
             - "r4-database:/usr/local/tomcat/target/database:delegated"
         command: ["sh", "-c", "
