@@ -13,7 +13,7 @@ volumes:
 
 # Services
 services:
-    smartapp: ##------- SMART-on-FHIR Application -------##
+    smartapp_template: ##------- SMART-on-FHIR Application -------##
         container_name: smartapp
         image: "fgiuste/node:15"
         working_dir: /home/node/app
@@ -23,7 +23,7 @@ services:
         volumes:
             - ./:/home/node/app
         ports:
-            - "8111:3000"
+            - "8000:3000"
         command: "/home/node/app/run_app.sh"
         stdin_open: true # docker run -i
         tty: true # docker run -t
