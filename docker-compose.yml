@@ -14,7 +14,7 @@ volumes:
 # Services
 services:
     smartapp_template: ##------- SMART-on-FHIR Application -------##
-        container_name: smartapp
+        container_name: smartapp_template
         image: "fgiuste/node:15"
         working_dir: /home/node/app
         environment:
