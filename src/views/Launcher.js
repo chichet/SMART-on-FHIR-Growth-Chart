@@ -17,9 +17,9 @@ export default class Launcher extends React.Component {
             redirectUri: "http://0.0.0.0:8300/",
             completeInTarget: true,
             // Define iss for TESTING
-            // iss: "http://hapi.fhir.org/baseR4",
+            iss: "http://hapi.fhir.org/baseR4",
             // Local server
-            iss: "http://0.0.0.0:8301/hapi-fhir-jpaserver/fhir/"
+            // iss: "http://0.0.0.0:8301/hapi-fhir-jpaserver/fhir/"
         });
     }
 

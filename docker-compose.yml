@@ -28,19 +28,19 @@ services:
         stdin_open: true # docker run -i
         tty: true # docker run -t
 
-    hapir4_template: ##------- HAPI R4 FHIR Server -------##
-        container_name: hapir4_template
-        image: smartonfhir/hapi-5:r4-synthea
-        environment:
-            PORT: 8080
-            HOST: 0.0.0.0
-        ports:
-            - "8301:8080"
-        volumes:
-            - "r4-database:/usr/local/tomcat/target/database:delegated"
-        command: ["sh", "-c", "
-            envsubst < /tmp/hapi.properties.tpl > /config/hapi.properties &&
-            envsubst < /tmp/server.xml > /usr/local/tomcat/conf/server.xml &&
-            catalina.sh run"]
+    # hapir4_template: ##------- HAPI R4 FHIR Server -------##
+    #     container_name: hapir4_template
+    #     image: smartonfhir/hapi-5:r4-synthea
+    #     environment:
+    #         PORT: 8080
+    #         HOST: 0.0.0.0
+    #     ports:
+    #         - "8301:8080"
+    #     volumes:
+    #         - "r4-database:/usr/local/tomcat/target/database:delegated"
+    #     command: ["sh", "-c", "
+    #         envsubst < /tmp/hapi.properties.tpl > /config/hapi.properties &&
+    #         envsubst < /tmp/server.xml > /usr/local/tomcat/conf/server.xml &&
+    #         catalina.sh run"]
 
         
