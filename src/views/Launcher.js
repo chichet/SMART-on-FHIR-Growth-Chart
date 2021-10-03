@@ -14,12 +14,12 @@ export default class Launcher extends React.Component {
             clientId: "",
             scope: "launch profile fhirUser openid online_access user/Patient.read user/Observation.read",
             // redirectUri: Endpoint for your application frontend
-            redirectUri: "http://0.0.0.0:8111/",
+            redirectUri: "http://0.0.0.0:8300/",
             completeInTarget: true,
             // Define iss for TESTING
             // iss: "http://hapi.fhir.org/baseR4",
             // Local server
-            iss: "http://0.0.0.0:8004/hapi-fhir-jpaserver/fhir/"
+            iss: "http://0.0.0.0:8005/hapi-fhir-jpaserver/fhir/"
         });
     }
 
