@@ -1,3 +1,6 @@
+// Felipe Giuste
+// 2021-10-05
+
 import React from "react";
 import { oauth2 as SMART } from "fhirclient";
 
@@ -16,10 +19,11 @@ export default class Launcher extends React.Component {
             // redirectUri: Endpoint for your application frontend
             redirectUri: "http://0.0.0.0:8300/",
             completeInTarget: true,
-            // Define iss for TESTING
-            iss: "http://hapi.fhir.org/baseR4",
+            // TESTING: Define fhirServiceUrl to bypass authentication
+            fhirServiceUrl: "http://hapi.fhir.org/baseR4",
             // Local server
-            // iss: "http://0.0.0.0:8301/hapi-fhir-jpaserver/fhir/"
+            // fhirServiceUrl: "http://0.0.0.0:8301/hapi-fhir-jpaserver/fhir/"
+            // iss: for standalone launch
         });
     }
 

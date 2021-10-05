@@ -7,6 +7,9 @@ import Button from "@material-ui/core/Button";
 // Import FhirClientContext (should contain client object after SMART verification)
 import { FhirClientContext } from "../../Context/FhirClientContext";
 
+// Import SMART Query helper function
+import {SMARTRequest} from "../../utils/SMARTRequest.js";
+
 // Fronend: Component to render button testing SMART client
 export default class Frontend extends React.Component {
     // FHIR Client Context
@@ -24,10 +27,6 @@ export default class Frontend extends React.Component {
         // Log context
         console.log("Frontend Component Mounted");
         console.log(this.context);
-
-        // const client = this.context.client;
-        // Log client
-        // console.log(client);
     }
 
 	render() {
@@ -37,6 +36,8 @@ export default class Frontend extends React.Component {
 
         const buttons = (
             <React.Fragment>
+
+            <div>
                 {/* Button logs SMART URL to console */}
                 <Button
                     id="button-submit"
@@ -48,6 +49,20 @@ export default class Frontend extends React.Component {
                     }}
                 >
                     Client
+                </Button>
+
+                {/* Button logs SMART URL to console */}
+                <Button
+                    id="button-submit"
+                    variant="contained"
+                    onClick={() => {
+                        const client = this.context.client;
+                        // Log url
+                        console.log(client.state.serverUrl);
+                            
+                    }}
+                >
+                    Client:server_Url
                 </Button>
 
                 {/* Button logs patient user to console */}
@@ -91,20 +106,25 @@ export default class Frontend extends React.Component {
                 >
                     Client:User
                 </Button>
-
-                {/* Button logs SMART URL to console */}
+            </div>
+                
+            <div>
+                {/* Button GET Request using SMART client */}
                 <Button
                     id="button-submit"
                     variant="contained"
                     onClick={() => {
                         const client = this.context.client;
-                        // Log url
-                        console.log(client.environment._url);
-                            
+                        // Query Parameters: Patient named Jon
+                        const QueryParameters = 'Patient?name=jon'
+
+                        // Query Patient
+                        SMARTRequest(QueryParameters, client)
                     }}
                 >
-                    Client:url
+                    Patient Query
                 </Button>
+            </div>
 
             </React.Fragment>
         )

@@ -2,8 +2,8 @@
 # 2021-10-01
 
 ## Ports ##
-# SMART-on-FHIR Application (smart-on-fhir-app): 8111
-# HAPI R4 FHRI Server (hapi-r4): 8004
+# SMART-on-FHIR Application (smart-on-fhir-app): 8300
+# HAPI R4 FHRI Server (hapi-r4): 8301
 
 version: "3.8"
 
@@ -43,4 +43,4 @@ services:
     #         envsubst < /tmp/server.xml > /usr/local/tomcat/conf/server.xml &&
     #         catalina.sh run"]
 
-        
+    
