@@ -15,7 +15,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import FhirClientProvider from "../Context/FhirClientProvider";
 
 // Pages
-import Frontend from "./pages/Frontend";
+import Home from "./pages/Home";
 
 // History
 const history = createBrowserHistory();
@@ -24,26 +24,11 @@ export default function Application() {
 
 	const links_element = (
 		<React.Fragment>
-			{/* List of Pages with Icons */}
-		    <List>
-		        <ListItem
-		            button
-		            component={Link}
-		            to="/frontend"
-		            key="Frontend"
-		        >
-		            <ListItemIcon>
-		                <ChevronRightIcon />
-		            </ListItemIcon>
-		            <ListItemText primary={"Frontend"} />
-		        </ListItem>
-		    </List>
-
 		    {/* Routes */}
 		    <main>
 		        {/* FHIR Client Provider */}
 		        <FhirClientProvider>
-		            <Route exact path="/frontend" component={Frontend} />
+		            <Route exact path="/" component={Home} />
 		        </FhirClientProvider>
 		    </main>
 	    </React.Fragment>

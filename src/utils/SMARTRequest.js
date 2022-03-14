@@ -9,7 +9,7 @@ export async function SMARTRequest(parameters, client){
     // GET Query
     const QueryResponse = await GETRequest(parameters, client)
     // Log Query Response
-    console.log(QueryResponse);
+    return QueryResponse
 }
 
 // GET Request via SMART client
@@ -27,3 +27,5 @@ async function GETRequest(parameters, client){
 	// Return fulfilled Promise
     return await QueryResponse
 }
+
+
