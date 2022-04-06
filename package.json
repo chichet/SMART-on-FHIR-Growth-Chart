@@ -1,5 +1,5 @@
 {
-  "name": "smart_template",
+  "name": "smart-on-fhir-growth-chart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
