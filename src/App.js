@@ -10,8 +10,8 @@ function App() {
     // returns Application and Launcher React Components as web pages;
     return (
         <BrowserRouter>
-            <Route path="/" component={Application} />
-            <Route path="/launch" component={Launcher} exact />
+            <Route eact path="/app" component={Application} />
+            <Route path="/" component={Launcher} exact />
         </BrowserRouter>
     );
 }

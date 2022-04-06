@@ -17,7 +17,7 @@ export default class Launcher extends React.Component {
             clientId: "9be0555e-198a-4df3-b9cb-c5d77a387cd7",
             scope: "launch profile fhirUser openid online_access user/Patient.read user/Observation.read",
             // redirectUri: Endpoint for your application frontend
-            redirectUri: "http://localhost:3000/",
+            redirectUri: "http://localhost:3000/app",
             completeInTarget: true,
             // TESTING: Define fhirServiceUrl to bypass authentication
             fhirServiceUrl: "http://hapi.fhir.org/baseR4",
