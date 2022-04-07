@@ -2,7 +2,7 @@
   "name": "smart-on-fhir-growth-chart",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/.", 
+  "homepage": "/.",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -13,6 +13,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "dayjs": "^1.11.0",
     "fhirclient": "^2.4.0",
     "history": "^4.10.1",
     "plotly.js": "^2.11.1",
