@@ -47,7 +47,7 @@ function Home(props) {
     
     const getPatient = async() =>{
       const client = clientContext.client;
-      const QueryParameters = `Patient?_id=${patientId}&_pretty=true`
+      const QueryParameters = `Patient?_id=${client.patient.id}&_pretty=true`
       const result = await SMARTRequest(QueryParameters, client)
       return result[0]
     }
@@ -55,9 +55,9 @@ function Home(props) {
     const getGrowthCharData = async() =>{
         const patient = await getPatient()
         const client = clientContext.client;
-        const length_result = await SMARTRequest(`Observation?code=http://loinc.org%7C8302-2&_pretty=true&patient=${patientId}`, client)
-        const weight_result = await SMARTRequest(`Observation?code=29463-7&_pretty=true&patient=${patientId}`, client)
-        const headCircumference_result = await SMARTRequest(`Observation?code=9843-4&_pretty=true&patient=${patientId}`, client)
+        const length_result = await SMARTRequest(`Observation?code=http://loinc.org%7C8302-2&_pretty=true&patient=${client.patient.id}`, client)
+        const weight_result = await SMARTRequest(`Observation?code=http://loinc.org%7C29463-7&_pretty=true&patient=${client.patient.id}`, client)
+        const headCircumference_result = await SMARTRequest(`Observation?code=http://loinc.org%7C9843-4&_pretty=true&patient=${client.patient.id}`, client)
         
         const length_month = [1.2, 2.3, 4, 7, 10, 13, 15, 18,20, 22, 24, 26, 28, 30, 32, 34]
         const length_value = [50, 55, 60.2, 64.5, 68.5, 72, 74, 78, 82,84, 87, 88.5, 91,92.5, 94, 96]
@@ -71,23 +71,23 @@ function Home(props) {
 
         const weight_month = [1, 2, 5]
         const weight_value = [4, 8, 12]
-        weight_result.forEach(_ => {
-          const months = (new Date(_.meta.lastUpdated) - new Date(patient.birthDate)) / (1000 * 60 * 60 * 24 * 12)
-          if(months <= 36){
-            weight_month.add(months)
-            weight_value.add(_.valueQuantity.value ? _.valueInteger:  _.valueInteger)
-          }
-        });
+        // weight_result.forEach(_ => {
+        //   const months = (new Date(_.meta.lastUpdated) - new Date(patient.birthDate)) / (1000 * 60 * 60 * 24 * 12)
+        //   if(months <= 36){
+        //     weight_month.add(months)
+        //     weight_value.add(_.valueQuantity.value ? _.valueInteger:  _.valueInteger)
+        //   }
+        // });
         
         const headCircumference_month = [1, 2]
         const headCircumference_value = [35, 40]
-        headCircumference_result.forEach(_ => {
-          const months = (new Date(_.meta.lastUpdated) - new Date(patient.birthDate)) / (1000 * 60 * 60 * 24 * 12)
-          if(months <= 36){
-            headCircumference_month.add(months)
-            headCircumference_value.add(_.valueQuantity.value ? _.valueInteger:  _.valueInteger)
-          }
-        });
+        // headCircumference_result.forEach(_ => {
+        //   const months = (new Date(_.meta.lastUpdated) - new Date(patient.birthDate)) / (1000 * 60 * 60 * 24 * 12)
+        //   if(months <= 36){
+        //     headCircumference_month.add(months)
+        //     headCircumference_value.add(_.valueQuantity.value ? _.valueInteger:  _.valueInteger)
+        //   }
+        // });
 
         setPatientData({
           ...patient, 
