@@ -1,6 +1,5 @@
 // Felipe Giuste
 // 2021-10-05
-
 import React from "react";
 import { oauth2 as SMART } from "fhirclient";
 
