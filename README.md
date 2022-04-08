@@ -1,7 +1,7 @@
 ## Project Name & Pitch
 SMART-on-FHIR Growth Chart Appliaction
 
-A Web application built in React and leverage Cerner’s FHIR standard server to retrieve data from the EHR based upon the current patient in context
+A web application built in React and leverages Cerner’s FHIR standard server to retrieve data from the EHR based upon the current patient in context
 ## Project Screen Shot
 
 ![Alt text](./src/image/app_screenshot.png?raw=true "Title")
