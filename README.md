@@ -1,3 +1,10 @@
+## Project Name & Pitch
+SMART-on-FHIR Growth Chart Appliaction
+
+A Web application built in React and leverage Cerner’s FHIR standard server to retrieve data from the EHR based upon the current patient in context
+## Project Screen Shot
+
+![Alt text](./src/image/app_screenshot.png?raw=true "Title")
 ## Installation and Setup Instructions
 Clone down this repository. You will need node and npm installed globally on your machine.
 
@@ -18,14 +25,6 @@ To Visit App:
 localhost:3000/
 ```
 
-## Usage
-Pending
-
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 Pending
