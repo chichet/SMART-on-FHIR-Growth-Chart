@@ -102,10 +102,6 @@ function Home(props) {
       })
     }, [])
 
-    useEffect(()=>{
-      console.log(patientData)
-    },[patientData])
-
 	return (
       <React.Fragment>
         <Box sx={{ bgcolor: 'background.paper'}}>
