@@ -1,11 +1,23 @@
-## Installation
+## Installation and Setup Instructions
+Clone down this repository. You will need node and npm installed globally on your machine.
+
+Installation:
+```bash
+npm install
+```
+
+To Start Server:
 
 ```bash
-docker run --rm -v ${PWD}:/home/node/app:rw --workdir="/home/node/app" node:15 chown node -R * 
+npm start
 ```
+
+To Visit App:
+
 ```bash
-Docker-compose up
+localhost:3000/
 ```
+
 ## Usage
 Pending
 
