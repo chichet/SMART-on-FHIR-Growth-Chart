@@ -14,7 +14,7 @@ function TabPanel(props) {
       {...other}
     >
       <div style={{marginLeft: '10px', marginTop: '5px', fontSize:'20px'}}> 
-        <div>{patientData && Array.isArray(patientData.name) && "Patient Name: "+ patientData.name[0].text}</div>
+        <div>{patientData && Array.isArray(patientData.name) && "Patient Name: "+ patientData.name[0].given[0] + " "+ patientData.name[0].family}</div>
         <div>{patientData && patientData.gender && "Gender: "+ patientData.gender}</div>
       </div>
       
