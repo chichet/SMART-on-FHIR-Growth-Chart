@@ -52,7 +52,7 @@ function Chart(props){
         x: PERCENTILE_DATA.month,
         y: PERCENTILE_DATA[type][patientData.gender|| 'male'][key],
         mode: 'lines',
-        name: `${key}th`,
+        name: key==='3'? `${key}rd` : `${key}th`,
         line: {
           dash: 'dot',
           width: 2
